@@ -4,4 +4,9 @@ select product_category_name,
     min(product_weight_g) as menor_peso,
     avg(product_weight_g) as avg_peso
 from tb_products
+
+where product_category_name is not null
+and product_category_name != 'alimentos'
+and product_category_name <> 'agro_industria_e_comercio'
+
 group by product_category_name
